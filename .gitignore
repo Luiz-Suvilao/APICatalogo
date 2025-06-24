@@ -1,0 +1,5 @@
+﻿.idea
+
+# Pastas de build do .NET
+bin/
+obj/
