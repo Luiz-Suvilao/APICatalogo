@@ -1,0 +1,24 @@
+﻿services:
+  api_catalogo_db:
+    image: mysql:8.0
+    container_name: api_catalogo_database
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: api_catalogo
+      MYSQL_USER: api_catalogo
+      MYSQL_PASSWORD: ap!_catalogo
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - catalogo_network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  catalogo_network:
+    driver: bridge
